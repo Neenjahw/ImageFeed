@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "gradient.png",
+      "filename" : "tab_profile_active.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "gradient_2.png",
+      "filename" : "tab_profile_active_2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "gradient_3.png",
+      "filename" : "tab_profile_active_3.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
