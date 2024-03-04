@@ -11,8 +11,12 @@ import UIKit
 class ImagesListCell: UITableViewCell {
     
     static let reuseIdentifier = "ImageListCell"
-    private let startGradientColor = UIColor(red: 26/255, green: 27/255, blue: 34/255, alpha: 0).cgColor
-    private let endGradientColor = UIColor(red: 26/255, green: 27/255, blue: 34/255, alpha: 0.2).cgColor
+    
+    //MARK: - Private constants
+    private enum UIConstants {
+        static let startGradientColor = UIColor(red: 26/255, green: 27/255, blue: 34/255, alpha: 0).cgColor
+        static let endGradientColor = UIColor(red: 26/255, green: 27/255, blue: 34/255, alpha: 0.2).cgColor
+    }
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
@@ -20,9 +24,10 @@ class ImagesListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setGradientBackground(for: dateLabel, with: [startGradientColor, endGradientColor])
+        setGradientBackground(for: dateLabel, with: [UIConstants.startGradientColor, UIConstants.endGradientColor])
     }
     
+    //MARK: - Private properties
     private func setGradientBackground(for dateLableText: UILabel, with colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = dateLableText.bounds
