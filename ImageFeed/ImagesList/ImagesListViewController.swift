@@ -10,6 +10,10 @@ import UIKit
 
 final class ImagesListViewController: UIViewController{
     
+    //MARK: - IBOutlets
+    @IBOutlet private var tableView: UITableView!
+    
+    //MARK: - Private properties
     private let ShowSingleImageSegueIdentifier = "ShowSingleImage"
     private let photosName: [String] = Array(0..<20).map{"\($0)"}
     
@@ -20,8 +24,7 @@ final class ImagesListViewController: UIViewController{
         return formatter
     }()
     
-    @IBOutlet private var tableView: UITableView!
-    
+    //MARK: - Public Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
@@ -40,7 +43,7 @@ final class ImagesListViewController: UIViewController{
     }
 }
 
-// MARK: extension ImageListViewController - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension ImagesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photosName.count
@@ -74,7 +77,7 @@ extension ImagesListViewController {
     }
 }
 
-// MARK: extension ImageListViewController - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension ImagesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: ShowSingleImageSegueIdentifier, sender: indexPath)

@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ImageListCell" rowHeight="404" id="Mrr-zI-LPR" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImageListCell" rowHeight="404" id="Mrr-zI-LPR" customClass="ImagesListCell" customModule="ImageFeed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mrr-zI-LPR" id="pAD-u1-nJM">
@@ -180,8 +180,12 @@
                                     <action selector="didTapBackButton" destination="0j5-14-uwc" eventType="touchUpInside" id="BMY-NB-gfK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-Og-6iB">
-                                <rect key="frame" x="171" y="782" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sp-Og-6iB">
+                                <rect key="frame" x="171.66666666666666" y="786" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GSt-IS-G31"/>
+                                    <constraint firstAttribute="width" constant="50" id="mxZ-Hr-M5H"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="button_share" title=""/>
                                 <connections>
@@ -194,7 +198,7 @@
                         <constraints>
                             <constraint firstItem="KXU-9G-2Gl" firstAttribute="leading" secondItem="MrN-k9-t4f" secondAttribute="leading" id="JMU-YJ-7VJ"/>
                             <constraint firstItem="KXU-9G-2Gl" firstAttribute="trailing" secondItem="MrN-k9-t4f" secondAttribute="trailing" id="KDV-93-HgU"/>
-                            <constraint firstItem="MrN-k9-t4f" firstAttribute="bottom" secondItem="8Sp-Og-6iB" secondAttribute="bottom" constant="4" id="MO7-Yp-Wzc"/>
+                            <constraint firstItem="MrN-k9-t4f" firstAttribute="bottom" secondItem="8Sp-Og-6iB" secondAttribute="bottom" constant="16" id="MO7-Yp-Wzc"/>
                             <constraint firstItem="1qG-t0-gzg" firstAttribute="leading" secondItem="MrN-k9-t4f" secondAttribute="leading" constant="9" id="Mc7-UN-B62"/>
                             <constraint firstItem="KXU-9G-2Gl" firstAttribute="top" secondItem="5ym-0i-wXv" secondAttribute="top" id="ZDJ-AT-NMN"/>
                             <constraint firstItem="1qG-t0-gzg" firstAttribute="top" secondItem="MrN-k9-t4f" secondAttribute="top" constant="9" id="d4S-I8-7K2"/>

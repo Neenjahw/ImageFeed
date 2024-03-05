@@ -9,12 +9,6 @@ import UIKit
 
 final class ProfileViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        initialize()
-    }
-    
     //MARK: - Private constants
     private enum UIConstants {
         static let nameLabelFontSize: CGFloat = 16
@@ -31,7 +25,7 @@ final class ProfileViewController: UIViewController {
     }()
     
     private let nameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Екатерина Новикова"
         label.textColor = .white
         label.font = .systemFont(ofSize: UIConstants.nameLabelFontSize, weight: .bold)
@@ -39,7 +33,7 @@ final class ProfileViewController: UIViewController {
     }()
     
     private let loginNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "@ekaterina_nov"
         label.textColor = .gray
         label.font = .systemFont(ofSize: UIConstants.loginNameLabelFontSize, weight: .regular)
@@ -47,7 +41,7 @@ final class ProfileViewController: UIViewController {
     }()
     
     private let descriptionLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "Hello, World!"
         label.textColor = .white
         label.font = .systemFont(ofSize: UIConstants.descriptionLabelFontSize, weight: .regular)
@@ -61,8 +55,15 @@ final class ProfileViewController: UIViewController {
         button.tintColor = UIColor(red: 0.96, green: 0.41, blue: 0.42, alpha: 1)
         return button
     }()
-
-    //MARK: - Private properties
+    
+    //MARK: - Public Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initialize()
+    }
+    
+    //MARK: - Private methods
     private func initialize() {
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +82,7 @@ final class ProfileViewController: UIViewController {
             avatarImageView.heightAnchor.constraint(equalToConstant: 70),
             avatarImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-         
+            
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 8),
             

@@ -8,6 +8,8 @@
 import UIKit
 
 final class SingleImageViewController: UIViewController {
+    
+    //MARK: - Public Properties
     var image: UIImage! {
         didSet {
             guard isViewLoaded else { return }
@@ -20,6 +22,7 @@ final class SingleImageViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var buttonShare: UIButton!
     
+    //MARK: - Public Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.minimumZoomScale = 0.1
@@ -27,6 +30,16 @@ final class SingleImageViewController: UIViewController {
         imageView.image = image
         rescaleAndCenterImageInScrollView(image: image)
         
+    }
+    
+    //MARK: - Private Methods
+    @IBAction private func didTapBackButton() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func didTapButtonShare(_ sender: UIButton) {
+        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(share, animated: true)
     }
     
     private func rescaleAndCenterImageInScrollView(image: UIImage) {
@@ -45,18 +58,9 @@ final class SingleImageViewController: UIViewController {
         let y = (newContentSize.height - visibleRectSize.height) / 2
         scrollView.setContentOffset(CGPoint(x: x, y: y), animated: false)
     }
-    
-    @IBAction private func didTapBackButton() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction private func didTapButtonShare(_ sender: UIButton) {
-        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        present(share, animated: true)
-    }
 }
 
-//MARK: extension SingleImageViewController - UIScrollViewDelegate
+//MARK: - UIScrollViewDelegate
 extension SingleImageViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         imageView
@@ -67,20 +71,20 @@ extension SingleImageViewController: UIScrollViewDelegate {
     }
     
     private func updateContentInset() {
-            let boundsSize = scrollView.bounds.size
-            let contentSize = scrollView.contentSize
-            
-            var verticalInsets: CGFloat = 0
-            var horizontalInsets: CGFloat = 0
-            
-            if contentSize.width < boundsSize.width {
-                horizontalInsets = (boundsSize.width - contentSize.width) / 2
-            }
-            
-            if contentSize.height < boundsSize.height {
-                verticalInsets = (boundsSize.height - contentSize.height) / 2
-            }
-            
-            scrollView.contentInset = UIEdgeInsets(top: verticalInsets, left: horizontalInsets, bottom: verticalInsets, right: horizontalInsets)
+        let boundsSize = scrollView.bounds.size
+        let contentSize = scrollView.contentSize
+        
+        var verticalInsets: CGFloat = 0
+        var horizontalInsets: CGFloat = 0
+        
+        if contentSize.width < boundsSize.width {
+            horizontalInsets = (boundsSize.width - contentSize.width) / 2
         }
+        
+        if contentSize.height < boundsSize.height {
+            verticalInsets = (boundsSize.height - contentSize.height) / 2
+        }
+        
+        scrollView.contentInset = UIEdgeInsets(top: verticalInsets, left: horizontalInsets, bottom: verticalInsets, right: horizontalInsets)
+    }
 }
