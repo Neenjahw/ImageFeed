@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+//MARK: - ImagesListCell
 class ImagesListCell: UITableViewCell {
     
     //MARK: - Private constants

@@ -24,12 +24,13 @@ final class ImagesListViewController: UIViewController{
         return formatter
     }()
     
-    //MARK: - Public Methods
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     }
     
+    //MARK: - Override Mehods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ShowSingleImageSegueIdentifier {
             let viewController = segue.destination as! SingleImageViewController
@@ -79,6 +80,8 @@ extension ImagesListViewController {
 
 // MARK: - UITableViewDelegate
 extension ImagesListViewController: UITableViewDelegate {
+    
+    //MARK: - Public Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: ShowSingleImageSegueIdentifier, sender: indexPath)
     }

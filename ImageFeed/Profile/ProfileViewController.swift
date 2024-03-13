@@ -56,7 +56,7 @@ final class ProfileViewController: UIViewController {
         return button
     }()
     
-    //MARK: - Public Methods
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
