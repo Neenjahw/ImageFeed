@@ -31,6 +31,7 @@ final class WebViewViewController: UIViewController {
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         loadAuthView()
         configureBackButtonCustom()
         configureProgressiveView()

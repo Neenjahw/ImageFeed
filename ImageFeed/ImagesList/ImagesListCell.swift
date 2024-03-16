@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: - ImagesListCell
-class ImagesListCell: UITableViewCell {
+final class ImagesListCell: UITableViewCell {
     
     //MARK: - Private constants
     private enum UIConstants {
